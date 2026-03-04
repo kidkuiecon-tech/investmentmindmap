@@ -1,0 +1,145 @@
+import React, { useState } from 'react';
+import { 
+  ChevronRight, 
+  ChevronDown, 
+  Target, 
+  Users, 
+  TrendingUp, 
+  ShieldCheck, 
+  Compass, 
+  Globe, 
+  AlertTriangle 
+} from 'lucide-react';
+
+const MindMapNode = ({ title, children, icon: Icon, color, defaultOpen = true }) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  return (
+    <div className="mb-4">
+      <div 
+        className={`flex items-center p-3 rounded-lg cursor-pointer transition-all border-l-4 ${color} bg-white shadow-sm hover:shadow-md`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <div className={`p-2 rounded-full mr-3 ${color.replace('border-', 'bg-').replace('700', '100')}`}>
+          {Icon && <Icon size={20} className={color.replace('border-', 'text-')} />}
+        </div>
+        <span className="font-bold text-gray-800 flex-grow">{title}</span>
+        {children && (
+          <div className="text-gray-400">
+            {isOpen ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+          </div>
+        )}
+      </div>
+      
+      {isOpen && children && (
+        <div className="ml-8 mt-2 border-l-2 border-gray-200 pl-4 space-y-2">
+          {children}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const LeafNode = ({ label, detail, type }) => {
+  const typeColors = {
+    danger: "text-red-600 bg-red-50",
+    success: "text-green-600 bg-green-50",
+    info: "text-blue-600 bg-blue-50",
+    warning: "text-amber-600 bg-amber-50",
+    neutral: "text-gray-600 bg-gray-50"
+  };
+
+  const currentColor = typeColors[type] || typeColors.neutral;
+
+  return (
+    <div className="p-2 rounded-md hover:bg-gray-50 transition-colors">
+      <div className="flex items-center">
+        <div className="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>
+        <span className="font-semibold text-gray-700">{label}</span>
+      </div>
+      {detail && <div className={`ml-4 text-sm mt-1 p-1 rounded ${currentColor}`}>{detail}</div>}
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <div className="min-h-screen bg-slate-100 p-8 font-sans">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <h1 className="text-3xl font-bold text-slate-900 mb-2">
+            Mind Map: กลยุทธ์การลงทุนวิกฤตภูมิรัฐศาสตร์ 2026
+          </h1>
+          <p className="text-slate-600 italic underline decoration-amber-500">
+            กรณีความขัดแย้งสหรัฐฯ-อิหร่าน
+          </p>
+        </div>
+
+        {/* Central Node */}
+        <div className="bg-slate-900 text-white p-6 rounded-2xl shadow-xl mb-12 flex items-center justify-center border-b-8 border-amber-500">
+          <Globe className="mr-4 text-amber-500" size={32} />
+          <div className="text-center">
+            <h2 className="text-2xl font-bold">Investment Mind Map</h2>
+            <p className="text-slate-400 text-sm">Framework สำหรับการตัดสินใจภายใต้วิกฤต</p>
+          </div>
+        </div>
+
+        {/* Branches */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          {/* Branch 1: Material Event */}
+          <div className="space-y-4">
+            <MindMapNode title="1. การประเมินสถานการณ์ (Material Event)" icon={Target} color="border-red-700">
+              <LeafNode label="Direct Confrontation" detail="เปลี่ยนจากสงครามตัวแทนสู่การปะทะโดยตรง" type="danger" />
+              <LeafNode label="Hormuz Blockade" detail="กระทบการค้าพลังงานโลก 20-25%" type="danger" />
+              <LeafNode label="Tail Risk" detail="ความเสี่ยงนิวเคลียร์และผู้นำสูงสุด" type="warning" />
+            </MindMapNode>
+
+            <MindMapNode title="2. โครงสร้างภาคี (Stakeholders)" icon={Users} color="border-blue-700">
+              <LeafNode label="Primary" detail="US, Israel vs Iran (Survival Mode)" type="info" />
+              <LeafNode label="Alliances" detail="GCC & NATO (ฐานทัพและเส้นทางเดินเรือ)" type="info" />
+              <LeafNode label="Supporters" detail="Russia (Military Tech) & China (Oil Buyer)" type="warning" />
+              <LeafNode label="Mediators" detail="Oman, Qatar, Turkey (ช่องทางทูตลับ)" type="neutral" />
+            </MindMapNode>
+
+            <MindMapNode title="3. กลไกผลกระทบ (Economic Impact)" icon={TrendingUp} color="border-amber-700">
+              <LeafNode label="Energy Prices" detail="Brent Target $100+ / LNG Shortage" type="danger" />
+              <LeafNode label="Inflation" detail="Headline Inflation พุ่ง / Fed ชะลอการลดดอกเบี้ย" type="warning" />
+              <LeafNode label="Sentiment" detail="Flight to Quality (Haven First, Ask Later)" type="info" />
+            </MindMapNode>
+          </div>
+
+          {/* Branch 2: Strategy */}
+          <div className="space-y-4">
+            <MindMapNode title="4. การจัดสรรสินทรัพย์ (Asset Allocation)" icon={ShieldCheck} color="border-green-700">
+              <LeafNode label="Safe Havens" detail="Gold, USD (Petrodollar), JPY" type="success" />
+              <LeafNode label="Risky Assets" detail="Equities (Sell-off 2-7%), Long-term Bonds" type="danger" />
+              <LeafNode label="Relative Strength" detail="Healthcare, High Cash Flow Stocks" type="success" />
+            </MindMapNode>
+
+            <MindMapNode title="5. กลยุทธ์ตามกรอกเวลา (Strategy)" icon={Compass} color="border-indigo-700">
+              <LeafNode label="Tactical (<1 เดือน)" detail="ถือเงินสด, เล็งกลุ่ม Upstream & Defense" type="info" />
+              <LeafNode label="New Normal (>1 เดือน)" detail="Rebalance พอร์ตตามพื้นฐานเศรษฐกิจใหม่" type="success" />
+              <LeafNode label="Sector Focus" detail="Oil Shale (OXY), Defense (LMT), AI (PLTR)" type="info" />
+            </MindMapNode>
+
+            <MindMapNode title="6. ผลกระทบรายประเทศ (Winners/Losers)" icon={AlertTriangle} color="border-purple-700">
+              <LeafNode label="The Losers" detail="ไทย (นำเข้า 4.7% GDP), อินเดีย, เกาหลีใต้" type="danger" />
+              <LeafNode label="The Winners" detail="สหรัฐฯ, นอร์เวย์, บราซิล" type="success" />
+              <LeafNode label="CPO Winners" detail="อินโดนีเซีย, มาเลเซีย (ปาล์มน้ำมันพุ่งตาม Crude)" type="success" />
+            </MindMapNode>
+          </div>
+
+        </div>
+
+        {/* Footer Note */}
+        <div className="mt-12 p-4 bg-white rounded-lg border border-slate-200 text-center text-sm text-slate-500 italic">
+          "วินัยเหนืออารมณ์ (Discipline over Emotion) คือกุญแจสำคัญสู่การสร้าง Resilient Portfolio"
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default App;
