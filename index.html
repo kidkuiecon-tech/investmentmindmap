@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Tailwind CSS (via CDN for simplicity in single file) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -33,175 +33,168 @@
 </head>
 <body class="p-4 md:p-8">
 
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-5xl mx-auto">
         <!-- Header -->
         <div class="text-center mb-10">
             <h1 class="text-3xl font-bold text-slate-900 mb-2">
                 Mind Map: กลยุทธ์การลงทุนวิกฤตภูมิรัฐศาสตร์ 2026
             </h1>
             <p class="text-slate-600 italic border-b-2 border-amber-500 inline-block pb-1">
-                กรณีความขัดแย้งสหรัฐฯ-อิหร่าน
+                Full Framework
             </p>
         </div>
 
         <!-- Central Node -->
         <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-xl mb-12 flex items-center justify-center border-b-8 border-amber-500">
-            <i class="fa-solid fa-earth-asia text-amber-500 text-4xl mr-4"></i>
+            <i class="fa-solid fa-map-location-dot text-amber-500 text-4xl mr-4"></i>
             <div class="text-center">
-                <h2 class="text-2xl font-bold">Investment Planning Map</h2>
-                <p class="text-slate-400 text-sm">Framework สำหรับการตัดสินใจภายใต้วิกฤต</p>
+                <h2 class="text-2xl font-bold">Investment Strategy Framework</h2>
+                <p class="text-slate-400 text-sm">การจัดสรรสินทรัพย์ภายใต้วิกฤตภูมิรัฐศาสตร์สหรัฐฯ-อิหร่าน</p>
             </div>
         </div>
 
-        <!-- Branches Grid -->
+        <!-- Ordered Grid 1-7 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <!-- Left Column -->
-            <div class="space-y-4">
-                
-                <!-- Node 1 -->
-                <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-red-700 overflow-hidden">
-                    <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50 transition-colors" onclick="toggleNode('node1', this)">
-                        <div class="p-2 rounded-full bg-red-100 text-red-700 mr-3">
-                            <i class="fa-solid fa-bullseye w-5 h-5 flex items-center justify-center"></i>
-                        </div>
-                        <span class="font-bold text-gray-800 flex-grow">1. การประเมินสถานการณ์ (Material Event)</span>
-                        <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
+            <!-- 1. การประเมินสถานการณ์ -->
+            <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-red-700 overflow-hidden">
+                <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50" onclick="toggleNode('node1', this)">
+                    <div class="p-2 rounded-full bg-red-100 text-red-700 mr-3">
+                        <span class="font-bold text-lg">1</span>
                     </div>
-                    <div id="node1" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 space-y-3">
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>Direct Confrontation</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-red-600 bg-red-50">เปลี่ยนจากสงครามตัวแทนสู่การปะทะโดยตรง</div>
-                        </div>
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>Hormuz Blockade</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-red-600 bg-red-50">กระทบการค้าพลังงานโลก 20-25%</div>
-                        </div>
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>Tail Risk</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-amber-600 bg-amber-50">ความเสี่ยงนิวเคลียร์และผู้นำสูงสุด</div>
-                        </div>
-                    </div>
+                    <span class="font-bold text-gray-800 flex-grow">การประเมินสถานการณ์ (Material Event)</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
                 </div>
-
-                <!-- Node 2 (Updated with Opponent & Supporter) -->
-                <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-blue-700 overflow-hidden">
-                    <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50 transition-colors" onclick="toggleNode('node2', this)">
-                        <div class="p-2 rounded-full bg-blue-100 text-blue-700 mr-3">
-                            <i class="fa-solid fa-users w-5 h-5 flex items-center justify-center"></i>
-                        </div>
-                        <span class="font-bold text-gray-800 flex-grow">2. โครงสร้างภาคี (Stakeholders)</span>
-                        <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
+                <div id="node1" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 space-y-2">
+                    <div class="p-2">
+                        <div class="font-semibold text-gray-700">Direct Confrontation</div>
+                        <div class="text-xs text-red-600">เปลี่ยนจากสงครามตัวแทนสู่การปะทะโดยตรง</div>
                     </div>
-                    <div id="node2" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 space-y-3">
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>Primary Actors</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-blue-600 bg-blue-50">สหรัฐฯ และ อิสราเอล (เปิดปฏิบัติการทางทหาร)</div>
-                        </div>
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>Opponent</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-red-600 bg-red-50">อิหร่าน & Axis of Resistance (ฮิซบอลเลาะห์/ฮูตี)</div>
-                        </div>
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>Opponent Supporter</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-amber-600 bg-amber-50">รัสเซีย (เทคโนโลยีทางทหาร) & จีน (ผู้ซื้อน้ำมันหลัก)</div>
-                        </div>
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>US Alliances</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-blue-600 bg-blue-50">NATO และกลุ่มประเทศ GCC (บาห์เรน, ยูเออี)</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Node 3 -->
-                <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-amber-700 overflow-hidden">
-                    <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50 transition-colors" onclick="toggleNode('node3', this)">
-                        <div class="p-2 rounded-full bg-amber-100 text-amber-700 mr-3">
-                            <i class="fa-solid fa-chart-line w-5 h-5 flex items-center justify-center"></i>
-                        </div>
-                        <span class="font-bold text-gray-800 flex-grow">3. กลไกผลกระทบ (Economic Impact)</span>
-                        <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
-                    </div>
-                    <div id="node3" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 space-y-3">
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>Energy Prices</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-red-600 bg-red-50">Brent Target $100+ / LNG Shortage</div>
-                        </div>
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>Inflation</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-amber-600 bg-amber-50">Headline Inflation พุ่ง / Fed ชะลอการลดดอกเบี้ย</div>
-                        </div>
+                    <div class="p-2 border-t border-gray-100">
+                        <div class="font-semibold text-gray-700">Hormuz Blockade</div>
+                        <div class="text-xs text-red-600">ปิดช่องแคบฮอร์มุซ กระทบพลังงานโลก 20-25%</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Column -->
-            <div class="space-y-4">
-                
-                <!-- Node 4 -->
-                <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-green-700 overflow-hidden">
-                    <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50 transition-colors" onclick="toggleNode('node4', this)">
-                        <div class="p-2 rounded-full bg-green-100 text-green-700 mr-3">
-                            <i class="fa-solid fa-shield-halved w-5 h-5 flex items-center justify-center"></i>
-                        </div>
-                        <span class="font-bold text-gray-800 flex-grow">4. การจัดสรรสินทรัพย์ (Asset Allocation)</span>
-                        <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
+            <!-- 2. โครงสร้างภาคี -->
+            <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-blue-700 overflow-hidden">
+                <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50" onclick="toggleNode('node2', this)">
+                    <div class="p-2 rounded-full bg-blue-100 text-blue-700 mr-3">
+                        <span class="font-bold text-lg">2</span>
                     </div>
-                    <div id="node4" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 space-y-3">
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>Safe Havens</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-green-600 bg-green-50">Gold, USD (Petrodollar), JPY</div>
-                        </div>
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>Risky Assets</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-red-600 bg-red-50">Equities (Sell-off 2-7%), Bonds</div>
-                        </div>
-                    </div>
+                    <span class="font-bold text-gray-800 flex-grow">โครงสร้างภาคี (Stakeholders)</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
                 </div>
-
-                <!-- Node 5 -->
-                <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-indigo-700 overflow-hidden">
-                    <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50 transition-colors" onclick="toggleNode('node5', this)">
-                        <div class="p-2 rounded-full bg-indigo-100 text-indigo-700 mr-3">
-                            <i class="fa-solid fa-compass w-5 h-5 flex items-center justify-center"></i>
-                        </div>
-                        <span class="font-bold text-gray-800 flex-grow">5. กลยุทธ์ตามกรอบเวลา (Strategy)</span>
-                        <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
-                    </div>
-                    <div id="node5" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 space-y-3">
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>Tactical (<1 เดือน)</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-blue-600 bg-blue-50">ถือเงินสด, เล็งกลุ่ม Upstream & Defense</div>
-                        </div>
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>New Normal (>1 เดือน)</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-green-600 bg-green-50">Rebalance พอร์ตตามพื้นฐานเศรษฐกิจใหม่</div>
-                        </div>
-                    </div>
+                <div id="node2" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 space-y-2">
+                    <div class="p-2"><div class="font-semibold text-blue-800 text-sm">Primary: US & Israel</div></div>
+                    <div class="p-2 border-t border-gray-100"><div class="font-semibold text-red-800 text-sm">Opponent: Iran & Axis of Resistance</div></div>
+                    <div class="p-2 border-t border-gray-100"><div class="font-semibold text-amber-800 text-sm">Supporter: Russia & China</div></div>
+                    <div class="p-2 border-t border-gray-100"><div class="font-semibold text-slate-600 text-sm">Mediators: Oman, Qatar, Turkey</div></div>
                 </div>
-
-                <!-- Node 6 -->
-                <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-purple-700 overflow-hidden">
-                    <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50 transition-colors" onclick="toggleNode('node6', this)">
-                        <div class="p-2 rounded-full bg-purple-100 text-purple-700 mr-3">
-                            <i class="fa-solid fa-triangle-exclamation w-5 h-5 flex items-center justify-center"></i>
-                        </div>
-                        <span class="font-bold text-gray-800 flex-grow">6. ผลกระทบรายประเทศ (Winners/Losers)</span>
-                        <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
-                    </div>
-                    <div id="node6" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 space-y-3">
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>The Losers</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-red-600 bg-red-50">ไทย (นำเข้า 4.7% GDP), อินเดีย, เกาหลีใต้</div>
-                        </div>
-                        <div class="p-2">
-                            <div class="flex items-center font-semibold text-gray-700"><div class="w-2 h-2 rounded-full bg-gray-300 mr-2"></div>The Winners</div>
-                            <div class="ml-4 text-sm mt-1 p-1 rounded text-green-600 bg-green-50">สหรัฐฯ, นอร์เวย์, บราซิล, อินโดนีเซีย</div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- 3. กลไกผลกระทบ -->
+            <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-amber-700 overflow-hidden">
+                <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50" onclick="toggleNode('node3', this)">
+                    <div class="p-2 rounded-full bg-amber-100 text-amber-700 mr-3">
+                        <span class="font-bold text-lg">3</span>
+                    </div>
+                    <span class="font-bold text-gray-800 flex-grow">กลไกผลกระทบ (Economic Impact)</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
+                </div>
+                <div id="node3" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 space-y-2">
+                    <div class="p-2"><div class="font-semibold text-gray-700 text-sm">Energy: Brent Target $100+</div></div>
+                    <div class="p-2 border-t border-gray-100"><div class="font-semibold text-gray-700 text-sm">Inflation: Headline CPI Spikes</div></div>
+                    <div class="p-2 border-t border-gray-100"><div class="font-semibold text-gray-700 text-sm">Sentiment: Risk-Off Mode</div></div>
+                </div>
+            </div>
+
+            <!-- 4. การจัดสรรสินทรัพย์ -->
+            <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-green-700 overflow-hidden">
+                <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50" onclick="toggleNode('node4', this)">
+                    <div class="p-2 rounded-full bg-green-100 text-green-700 mr-3">
+                        <span class="font-bold text-lg">4</span>
+                    </div>
+                    <span class="font-bold text-gray-800 flex-grow">การจัดสรรสินทรัพย์ (Allocation)</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
+                </div>
+                <div id="node4" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 space-y-3">
+                    <div class="p-2">
+                        <div class="flex items-center font-semibold text-gray-700"><i class="fa-solid fa-money-bill-1-wave mr-2 text-green-600"></i>Cash Buffer</div>
+                        <div class="ml-4 text-xs mt-1 p-1 rounded text-blue-700 bg-blue-50 font-bold italic underline">เผื่อเงินสด 20-30% สำหรับหา Entry Point เข้าถัวทุน</div>
+                    </div>
+                    <div class="p-2 border-t border-gray-100">
+                        <div class="flex items-center font-semibold text-gray-700"><i class="fa-solid fa-dumbbell mr-2 text-slate-600"></i>Barbell Strategy</div>
+                        <div class="ml-4 text-xs mt-1 p-1 rounded text-amber-700 bg-amber-50">มี Safe Haven Asset ไว้บ้างเพื่อรับแรง Tension</div>
+                    </div>
+                    <div class="p-2 border-t border-gray-100">
+                        <div class="flex items-center font-semibold text-gray-700"><i class="fa-solid fa-hourglass-start mr-2 text-red-600"></i>Strategic Entry</div>
+                        <div class="ml-4 text-xs mt-1 p-1 rounded text-slate-700 bg-slate-100 font-bold">รอ Risky Asset ถูกทิ้งจนนิ่ง แล้วค่อยทยอยเข้ากลุ่มที่สนใจ</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. กลยุทธ์ตามกรอบเวลา -->
+            <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-indigo-700 overflow-hidden">
+                <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50" onclick="toggleNode('node5', this)">
+                    <div class="p-2 rounded-full bg-indigo-100 text-indigo-700 mr-3">
+                        <span class="font-bold text-lg">5</span>
+                    </div>
+                    <span class="font-bold text-gray-800 flex-grow">กลยุทธ์ตามกรอบเวลา (Strategy)</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
+                </div>
+                <div id="node5" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 space-y-2">
+                    <div class="p-2"><div class="font-semibold text-gray-700 text-sm">Tactical (Short-term): Relative Strength</div></div>
+                    <div class="p-2 border-t border-gray-100"><div class="font-semibold text-gray-700 text-sm">New Normal (Long-term): Quality Selection</div></div>
+                </div>
+            </div>
+
+            <!-- 6. ผลกระทบรายประเทศ -->
+            <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-purple-700 overflow-hidden">
+                <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50" onclick="toggleNode('node6', this)">
+                    <div class="p-2 rounded-full bg-purple-100 text-purple-700 mr-3">
+                        <span class="font-bold text-lg">6</span>
+                    </div>
+                    <span class="font-bold text-gray-800 flex-grow">ผลกระทบรายประเทศ (Impact)</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
+                </div>
+                <div id="node6" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 space-y-2">
+                    <div class="p-1 bg-purple-50 rounded mb-2">
+                        <div class="text-[10px] font-bold text-purple-900 uppercase italic">วัดผลจาก: พึ่งพานำเข้าน้ำมัน / นโยบายพลังงาน / ทรัพยากรสำคัญ</div>
+                    </div>
+                    <div class="p-2">
+                        <div class="font-semibold text-red-600 underline">The Losers (ถ้าย่อแรงก็น่าสนใจ)</div>
+                        <div class="text-sm text-gray-600">ไทย, อินเดีย, เกาหลีใต้</div>
+                    </div>
+                    <div class="p-2 border-t border-gray-100">
+                        <div class="font-semibold text-green-600 underline">The Winners</div>
+                        <div class="text-sm text-gray-600 font-bold">สหรัฐฯ, นอร์เวย์, บราซิล, อินโดฯ, มาเลเซีย, เม็กซิโก</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Investment Playbook -->
+            <div class="mindmap-node bg-white rounded-lg shadow-sm border-l-4 border-amber-600 overflow-hidden md:col-span-2">
+                <div class="flex items-center p-4 cursor-pointer hover:bg-gray-50" onclick="toggleNode('node7', this)">
+                    <div class="p-2 rounded-full bg-amber-100 text-amber-600 mr-3">
+                        <span class="font-bold text-lg">7</span>
+                    </div>
+                    <span class="font-bold text-gray-800 flex-grow">Investment Playbook (New Mindset)</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 node-icon"></i>
+                </div>
+                <div id="node7" class="ml-10 mb-4 border-l-2 border-gray-200 pl-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-3 bg-slate-50 rounded-lg border-l-4 border-red-500">
+                        <div class="font-bold text-red-700 text-sm mb-1 uppercase tracking-wider"><i class="fa-solid fa-ban mr-2"></i>Stop Tech/Low Interest Bias</div>
+                        <div class="text-xs text-slate-600 italic">จะไม่ยึดติดกับ Tech หรือนโยบายดอกเบี้ยต่ำเพียงอย่างเดียวอีกต่อไป</div>
+                    </div>
+                    <div class="p-3 bg-amber-50 rounded-lg border border-amber-200 border-l-4 border-amber-600">
+                        <div class="font-bold text-amber-900 text-sm mb-1 uppercase tracking-wider"><i class="fa-solid fa-shield-virus mr-2"></i>Stagflation & War Playbook</div>
+                        <div class="text-xs text-amber-800 font-semibold italic">พร้อมรับแผนการลงทุนสำหรับสภาวะเงินเฟ้อสูงและภาวะสงคราม (Dynamic Approach)</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- Footer -->
